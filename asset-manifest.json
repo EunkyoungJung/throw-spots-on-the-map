@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/EunkyoungJung.io/static/css/main.e479dfc7.chunk.css",
+    "main.js": "/EunkyoungJung.io/static/js/main.632e0226.chunk.js",
+    "main.js.map": "/EunkyoungJung.io/static/js/main.632e0226.chunk.js.map",
+    "runtime-main.js": "/EunkyoungJung.io/static/js/runtime-main.80023173.js",
+    "runtime-main.js.map": "/EunkyoungJung.io/static/js/runtime-main.80023173.js.map",
+    "static/js/2.d3e8e2aa.chunk.js": "/EunkyoungJung.io/static/js/2.d3e8e2aa.chunk.js",
+    "static/js/2.d3e8e2aa.chunk.js.map": "/EunkyoungJung.io/static/js/2.d3e8e2aa.chunk.js.map",
+    "index.html": "/EunkyoungJung.io/index.html",
+    "precache-manifest.588c4fae01ec984980f9de246080c789.js": "/EunkyoungJung.io/precache-manifest.588c4fae01ec984980f9de246080c789.js",
+    "service-worker.js": "/EunkyoungJung.io/service-worker.js",
+    "static/css/main.e479dfc7.chunk.css.map": "/EunkyoungJung.io/static/css/main.e479dfc7.chunk.css.map",
+    "static/js/2.d3e8e2aa.chunk.js.LICENSE.txt": "/EunkyoungJung.io/static/js/2.d3e8e2aa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80023173.js",
+    "static/js/2.d3e8e2aa.chunk.js",
+    "static/css/main.e479dfc7.chunk.css",
+    "static/js/main.632e0226.chunk.js"
+  ]
+}
