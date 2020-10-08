@@ -1,3 +1,7 @@
+export function ExcelDateToJSDate(date) {
+  return new Date(Math.round((date - 25569) * 86400 * 1000));
+}
+
 export function convertInvalidIntoValidDate(invalidDate) {
   // 20200921을 '2020-09-21'로 리턴
   return `${invalidDate.slice(0, 4)}-${invalidDate.slice(

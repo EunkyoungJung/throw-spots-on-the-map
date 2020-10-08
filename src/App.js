@@ -45,7 +45,6 @@ function App() {
     },
   });
   const [spots, setSpots] = useState();
-  const [columns, setColumns] = useState();
 
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -62,8 +61,6 @@ function App() {
         );
         let jsonObject = JSON.stringify(rowObject);
         let jsObject = JSON.parse(jsonObject);
-        let columns = Object.getOwnPropertyNames(jsObject[0]);
-        setColumns(columns);
         setSpots(jsObject);
       });
     };

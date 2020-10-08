@@ -40,7 +40,6 @@ const Td = styled.td`
 
 const CustomedTable = (props) => {
   const { rows } = props;
-  console.log(rows);
   return (
     <TableWrapper>
       <Table>
