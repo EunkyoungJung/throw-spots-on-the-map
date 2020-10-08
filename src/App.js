@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
-import MapContainer from "../src/components/MapContainer";
 import XLSX from "xlsx";
+
+import MapContainer from "../src/components/MapContainer";
+import ExplainHowToUse from "../src/components/ExplainHowToUse";
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
+  font-size: 1rem;
 `;
 
 const RightSectionWrapper = styled.div`
@@ -41,10 +44,10 @@ function App() {
       zoom: 7.45,
     },
   });
-  const [files, setFiles] = useState("");
   const [spots, setSpots] = useState();
+  const [columns, setColumns] = useState();
 
-  const handleChange3 = (e) => {
+  const handleChange = (e) => {
     const selectedFile = e.target.files[0];
     const fileReader = new FileReader();
     fileReader.onload = function (event) {
@@ -59,7 +62,8 @@ function App() {
         );
         let jsonObject = JSON.stringify(rowObject);
         let jsObject = JSON.parse(jsonObject);
-        setFiles(jsObject);
+        let columns = Object.getOwnPropertyNames(jsObject[0]);
+        setColumns(columns);
         setSpots(jsObject);
       });
     };
@@ -71,7 +75,8 @@ function App() {
       <Wrapper>
         <MapContainer selectedArea={selectedArea} spots={spots} />
         <RightSectionWrapper>
-          <Input type="file" onChange={handleChange3} />
+          <Input type="file" onChange={handleChange} />
+          <ExplainHowToUse />
         </RightSectionWrapper>
       </Wrapper>
     </>

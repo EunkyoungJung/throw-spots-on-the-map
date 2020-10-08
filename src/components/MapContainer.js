@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { divIcon } from "leaflet";
 import {
   Map,
   TileLayer,
@@ -10,8 +11,11 @@ import {
 } from "react-leaflet";
 import "./MapContainer.css";
 
+import InformationInTooltip from "./InformationInTooltip";
+import InformationInPopup from "./InformationInPopup";
+
 const MapContainer = (props) => {
-  const { selectedArea, spots } = props;
+  const { spots } = props;
   const [marker, setMarker] = useState({
     lat: 0,
     lng: 0,
@@ -41,11 +45,26 @@ const MapContainer = (props) => {
       ></ScaleControl>
       <TileLayer url={mapUrls.satellite} attribution="VWORLD" />
       <WMSTileLayer url={mapUrls.hybrid} />
-      <Marker position={[marker.lat, marker.lng]}></Marker>
+      {/* <Marker position={[marker.lat, marker.lng]}></Marker> */}
       {spots !== undefined
-        ? spots.map((spot) => (
-            <Marker position={[spot.lat, spot.lng]}>
-              <Tooltip>{spot.name}</Tooltip>
+        ? spots.map((spot, idx) => (
+            <Marker
+              key={idx}
+              position={[spot["위도"], spot["경도"]]}
+              icon={divIcon({
+                className: "",
+                iconSize: [24, 24],
+                html: `<div style="background:${
+                  spot.color ? spot.color : "yellow"
+                }; height:24px; border-radius:50%;"><div/>`,
+              })}
+            >
+              <Tooltip>
+                <InformationInTooltip data={spot} />
+              </Tooltip>
+              <Popup>
+                <InformationInPopup data={spot} />
+              </Popup>
             </Marker>
           ))
         : null}
