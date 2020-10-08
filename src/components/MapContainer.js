@@ -45,7 +45,7 @@ const MapContainer = (props) => {
       ></ScaleControl>
       <TileLayer url={mapUrls.satellite} attribution="VWORLD" />
       <WMSTileLayer url={mapUrls.hybrid} />
-      {/* <Marker position={[marker.lat, marker.lng]}></Marker> */}
+      <Marker position={[marker.lat, marker.lng]}></Marker>
       {spots !== undefined
         ? spots.map((spot, idx) => (
             <Marker
